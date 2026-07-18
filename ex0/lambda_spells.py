@@ -43,25 +43,24 @@ def main() -> None:
     transformed_spells = spell_transformer(spells)
     mages_stats_result = mage_stats(mages)
 
-    print("Testing artifact sorter")
-    print(f"{sorted_artifacs[0]['name']}"
-          f"({sorted_artifacs[0]['power']}) comes before "
-          f"{sorted_artifacs[-1]['name']}"
-          f"({sorted_artifacs[-1]['power']})")
+    print("Testing artifact sorter...")
+    for s in sorted_artifacs:
+        print(s)
 
     print()
-    print("Testing power filter with min_power = 60")
+    print("Testing power filter with min_power = 60...")
     for mage in filtered_mages:
         print(f"{mage['name']} - Power: {mage['power']} - "
               f"Element: {mage['element']}")
 
     print()
-    print("Testing spell transformer")
+    print("Testing spell transformer...")
     for spell in transformed_spells:
         print(spell, end=" ")
+    print()
 
     print()
-    print("Testing mage stats")
+    print("Testing mage stats...")
     for key, value in mages_stats_result.items():
         print(f"{key} =  {value}")
 

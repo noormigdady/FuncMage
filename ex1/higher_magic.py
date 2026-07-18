@@ -10,9 +10,9 @@ def fireball(target: str, power: int) -> str:
 
 
 def spell_combiner(spell1: Callable, spell2: Callable) -> Callable:
-    def inner(target: str, power: int) -> tuple:
+    def combiner(target: str, power: int) -> tuple:
         return (spell1(target, power), spell2(target, power))
-    return inner
+    return combiner
 
 
 def power_amplifier(base_spell: Callable, multiplier: int) -> Callable:
